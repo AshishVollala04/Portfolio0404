@@ -1,0 +1,109 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.animated-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #000, #fff, #000);
+  z-index: 1;
+  opacity: 0.8;
+  animation: gradient 20s ease-in-out infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 2;
+}
+
+.content {
+  flex: 1;
+  margin-right: 2rem;
+}
+
+.content p {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 4px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: text-animate 6s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text; /* Added standard property */
+  -webkit-text-fill-color: rgba(255, 255, 255, 0);
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin: 0.5rem 0;
+}
+
+.content h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 1rem;
+}
+
+.content p:last-child {
+  font-size: 1rem;
+  color: #ddd;
+  white-space: nowrap; /* Keep this text on one line */
+}
+
+.home-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-pic:hover {
+  transform: scale(1.1);
+}
+
+@keyframes text-animate {
+  0% {
+    background-position: -500%;
+  }
+  100% {
+    background-position: 500%;
+  }
+}
